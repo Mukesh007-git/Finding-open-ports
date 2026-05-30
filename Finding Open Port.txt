@@ -1,0 +1,48 @@
+Task 1
+
+Objective : To discover open ports on devices in the local network using Nmap.
+
+Tool Used : Kali Linux
+            Nmap
+            Wireshark
+
+Command Used : sudo nmap -sS 10.0.2.0/24
+
+
+Step 1 - Finding ip
+
+My ip (nmap) : inet 10.0.2.15/24 
+               10.0.2.255
+
+Step 2 - Scanning ip
+
+└─$ sudo nmap -sS 10.0.2.0/24
+[sudo] password for kali: 
+Starting Nmap 7.98 ( https://nmap.org ) at 2026-05-30 07:10 -0400
+Nmap scan report for 10.0.2.2
+Host is up (0.0046s latency).
+Not shown: 997 filtered tcp ports (no-response)
+PORT     STATE SERVICE
+135/tcp  open  msrpc
+445/tcp  open  microsoft-ds
+6666/tcp open  irc
+MAC Address: 52:55:0A:00:02:02 (Unknown)
+
+Nmap scan report for 10.0.2.3
+Host is up (0.0058s latency).
+Not shown: 999 filtered tcp ports (net-unreach)
+PORT   STATE SERVICE
+53/tcp open  domain
+MAC Address: 52:55:0A:00:02:03 (Unknown)
+
+Nmap scan report for 10.0.2.15
+Host is up.
+All 1000 scanned ports on 10.0.2.15 are in ignored states.
+Not shown: 1000 filtered tcp ports (no-response)
+
+Nmap done: 256 IP addresses (3 hosts up) scanned in 209.24 seconds
+
+WIRESHARK:
+
+Wireshark packet capture during Nmap TCP SYN scan of the local network. Traffic between 10.0.2.15 and discovered host 10.0.2.2 was observed and analyzed.
+
